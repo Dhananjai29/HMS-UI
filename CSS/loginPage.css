@@ -1,0 +1,188 @@
+:root{
+    --grey: #4D5061;
+    --alice-blue: #E8EEF2;
+    --blue: #5C80BC;
+    --tiffany-blue: #6DD3CE;
+    --saffron: #E8C547;
+    --overlay-color: #fff;
+    --border-radius: 6px;
+
+    ::placeholder{
+        color: var(--grey);
+    }
+}
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: "Arsenal SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main{
+    height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('../image/banner1.jpg');
+    background-size: cover;
+}
+
+.formContainer .heading a{
+    text-align: center;
+    font-size: 2rem;
+    position: absolute; top: 20px;
+    margin-bottom: 10px;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.form-group label {
+    color: var(--blue);
+    font-weight: 600;
+    display: block;
+    width: 30%;
+    margin-bottom: 5px;
+}
+.form-group input{
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.form-group .mobile{
+    width: 75%;
+}
+.form-group select {
+    width: 25%;
+    padding: 4px 0;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+.form-group input, .form-group select{
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.294);
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
+.formContainer .registerBtn{
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px;
+    background: transparent;
+    outline: none; border: 2px solid var(--saffron);
+    transition: 0.5s ease;
+}
+.formContainer .registerBtn:hover{
+    border-color: black;
+    color: var(--alice-blue);
+    scale: 1.03;
+    letter-spacing: 3px;
+}
+.loginText{
+    color: var(--alice-blue);
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+    padding: 10px;
+    cursor: pointer;
+}
+.loginText .loginBtn{
+    color: var(--saffron);
+    text-decoration: none;
+    position: relative;
+}
+.loginText .loginBtn::after{
+    content: " ";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0%;
+    transition: 0.2s ease;
+    border-bottom: 2px solid var(--saffron);
+}
+.loginText .loginBtn:hover::after{
+    width: 100%;
+}
+
+.formContainer{
+    /* overflow: hidden; */
+    backdrop-filter: blur(5px);
+    width: 500px; height: 80%;
+    /* position: relative; */
+    display: flex; justify-content: center; align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #5f5f5f2a;
+    display: flex; flex-direction: column;
+    transition: 1s ease;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.front, .back, .login {
+    position: absolute;
+    top: 55%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease;
+    backdrop-filter: blur(10px);
+    width: 450px; height: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    /* background-color: #ff0000; */
+    display: flex; flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.frontTrans{
+    opacity: 1;
+    scale: 1;
+    z-index: 1;
+}
+.backTrans{
+    opacity: 0;
+    scale: 0;
+}
+.loginTrans{
+    opacity: 0;
+    scale: 0;
+}
+.frontFlip{
+    opacity: 0;
+    scale: 0;
+}
+.backFlip{
+    opacity: 1;
+    scale: 1;
+}
+.loginFlip{
+    opacity: 1;
+    scale: 1;
+}
+
+/* .frontTrans {
+    transform: translate(0 , 0);
+}
+.backTrans {
+    transform: translate(0, 20%);
+}
+
+.frontFlip{
+    transform: translate(0, -140%);
+}
+.backFlip{
+    transform: translate(0, -100%);
+} */
+
+
+
