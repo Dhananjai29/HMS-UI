@@ -38,7 +38,7 @@
     align-items: center;
 }
 .form-group label {
-    color: var(--blue);
+    color: var(--alice-blue);
     font-weight: 600;
     display: block;
     width: 30%;
@@ -46,7 +46,7 @@
 }
 .form-group input{
     width: 100%;
-    padding: 3px;
+    padding: 3px 10px;
     box-sizing: border-box;
 }
 .form-group .mobile{
@@ -169,20 +169,11 @@
     opacity: 1;
     scale: 1;
 }
-
-/* .frontTrans {
-    transform: translate(0 , 0);
+#welcomeName{
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
-.backTrans {
-    transform: translate(0, 20%);
-}
-
-.frontFlip{
-    transform: translate(0, -140%);
-}
-.backFlip{
-    transform: translate(0, -100%);
-} */
 
 
 

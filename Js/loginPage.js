@@ -12,7 +12,6 @@ const inputElement = document.getElementById('fullName');
 const submitBtn = document.querySelector("#submitBtn");
 const loginBtn = document.querySelector("#loginBtn");
 
-
 document.addEventListener('DOMContentLoaded', function() {
 
     loginBtn.addEventListener('click', function() {
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     registerBtn.addEventListener('click', function() {
 
-        if (inputElement.value != "" && eMail.value != "" && mobileNo.value != "" && address.value != "") {
+        if (inputElement.value != "" && eMail.value != "" && mobileNo.value != "" && address.value != "" && mobileNo.value.length == 10) {
             document.getElementById('welcomeName').innerText = "Welcome "+ inputElement.value;
             frontcard.classList.remove("frontTrans");
             frontcard.classList.add("frontFlip");
@@ -45,12 +44,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 submitBtn.addEventListener("click", () =>{
-    if(password.value != confirmPass.value){
-        alert("Password does not match");
+    if(password.value != confirmPass.value || customerId.value == ""){
+        if(password.value != confirmPass.value){
+            alert("Password do not matched");
+            return;
+        }
+        else if(customerId.value == ""){
+            alert("Enter Customer Id");
+            return;
+        }
     }
     else{
-        window.location.replace("./index.html");
+        if(password.value == "" || confirmPass.value == ""){
+            alert("Enter Password")
+        }
+        else{
+            checkPassword();
+        }
     }
 })
 
-// document.querySelector('.welcomeName').textContent = firstName;
+
+function checkPassword() {
+    var uppercasePattern = /[A-Z]/;
+    var lowercasePattern = /[a-z]/;
+    var specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (!uppercasePattern.test(password) || !lowercasePattern.test(password) || !specialCharPattern.test(password)) {
+        // 
+        // console.log(password.value);
+        // console.log(confirmPass.value);
+         window.location.replace("./index.html");
+        // console.log("Password:", password.value);
+        // console.log("Uppercase Test:", uppercasePattern.test(password.value));
+        // console.log("Lowercase Test:", lowercasePattern.test(password.value));
+        // console.log("Special Character Test:", specialCharPattern.test(password.value));
+        // console.log("if condition");
+    } else {
+        alert("Password must contain at least one uppercase letter, one lowercase letter, and one special character.");
+        console.log(customerId.value);
+    }
+};
